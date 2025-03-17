@@ -290,18 +290,17 @@ def generate_makeup_tutorial(facial_features, processed_img):
         }
     }
 
-# Endpoint to handle image upload and generate makeup tutorial
-@app.route('/get-tutorial', methods=['POST'])
 
+@app.route('/get-tutorial', methods=['POST'])
 def get_tutorial():
+    print('hihihihih')
     if 'image' not in request.files:
         return jsonify({'error': 'No image file provided'}), 400
     
     image = request.files['image']
-    
+    print('image imageimage', image)
     print(f"Image size: {len(image.read())} bytes")
-    image.seek(0)  # Reset the pointer after reading to ensure it's available for further operations
-
+    image.seek(0)  
     # Save the image to a file
     image_path = os.path.join('uploads', image.filename)
     image.save(image_path)
