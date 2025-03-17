@@ -82,18 +82,6 @@ def classify_face_shape(facial_features):
         return "round"
 
 
-# def classify_eye_shape(facial_features):
-#     # Simplified face shape classification using the distance between key points
-#     face_id = list(facial_features.keys())[0]
-#     facial_landmarks = facial_features[face_id]
-    
-#     cheekbone_distance = np.linalg.norm(np.array(facial_landmarks[234]) - np.array(facial_landmarks[454]))
-#     jawline_distance = np.linalg.norm(np.array(facial_landmarks[0]) - np.array(facial_landmarks[17]))
-    
-#     if cheekbone_distance > jawline_distance:
-#         return "oval"
-#     else:
-#         return "round"
 
 def classify_eye_shape(facial_features):
     """
